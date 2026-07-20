@@ -7,13 +7,13 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 /* admin */
-$routes->get('/', 'OperationController::index');
+$routes->get('/operation', 'OperationController::index');
 $routes->post('/insert_operation', 'OperationController::insert_operation');
 $routes->get('/prefixes', 'PrefixeController::index');
 $routes->post('/prefixes/insert', 'PrefixeController::insert');
 
 /* clients */
-$routes->get('/login', 'ClientsController::index');
+$routes->get('/', 'ClientsController::index');
 $routes->post('/login', 'ClientsController::login');
 $routes->get('/espaceClient', 'ClientsController::espaceClient');
 $routes->get('/voirSolde', 'ClientsController::voirSolde');
