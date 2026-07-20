@@ -7,3 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/test', 'Test::index');
+$routes->get('/prefixes', 'PrefixeController::index');
+$routes->post('/prefixes/insert', 'PrefixeController::insert');
+
