@@ -12,6 +12,7 @@ $routes->post('/insert_operation', 'OperationController::insert_operation');
 $routes->get('/prefixes', 'PrefixeController::index');
 $routes->post('/prefixes/insert', 'PrefixeController::insert');
 $routes->get('/situation', 'TransactionController::gains');
+$routes->get('/situation/comptes', 'TransactionController::comptes');
 
 /* clients */
 $routes->get('/login', 'ClientsController::index');
