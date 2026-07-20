@@ -1,0 +1,182 @@
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    height: var(--navbar-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-xl);
+    transition: left var(--transition-smooth);
+}
+
+.top-navbar.sidebar-collapsed {
+    left: var(--sidebar-collapsed);
+}
+
+/* Search */
+.navbar-search {
+    position: relative;
+    width: 320px;
+}
+
+.navbar-search input {
+    width: 100%;
+    padding: 10px 16px 10px 42px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--bg-main);
+    font-family: var(--font-primary);
+    font-size: var(--fs-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.navbar-search input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(248, 108, 47, 0.1);
+}
+
+.navbar-search input::placeholder {
+    color: var(--text-muted);
+}
+
+.navbar-search .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Navbar Actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.navbar-action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all var(--transition-base);
+}
+
+.navbar-action-btn:hover {
+    background: var(--bg-main);
+    color: var(--primary);
+}
+
+.navbar-action-btn .badge-dot {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--danger);
+    border: 2px solid var(--white);
+}
+
+/* User dropdown */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 6px 12px 6px 6px;
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: background var(--transition-base);
+    border: none;
+    background: transparent;
+    margin-left: var(--space-sm);
+}
+
+.navbar-user:hover {
+    background: var(--bg-main);
+}
+
+.navbar-user .user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 600;
+    font-size: var(--fs-sm);
+}
+
+.navbar-user .user-info {
+    text-align: left;
+}
+
+.navbar-user .user-name {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.navbar-user .user-role {
+    font-size: var(--fs-xs);
+    color: var(--text-muted);
+}
+
+/* Dropdown menu */
+.dropdown-menu-custom {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-sm);
+    background: var(--white);
+    min-width: 200px;
+}
+
+.dropdown-menu-custom .dropdown-item {
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all var(--transition-fast);
+}
+
+.dropdown-menu-custom .dropdown-item:hover {
+    background: var(--bg-main);
+    color: var(--primary);
+}
+
+.dropdown-menu-custom .dropdown-item.text-danger:hover {
+    background: var(--danger-light);
+    color: var(--danger);
+}
+
+.dropdown-menu-custom .dropdown-divider {
+    border-color: var(--border-light);
+    margin: var(--space-xs) 0;
+}

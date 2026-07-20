@@ -20,7 +20,7 @@ class TransactionController extends BaseController
     public function gains()
     {
         $data = [
-            'parType'      => $this->transactionModel->getGainsParType(),
+            'parType' => $this->transactionModel->getGainsParType(),
             'totalGeneral' => $this->transactionModel->getTotalGains(),
         ];
 
@@ -32,8 +32,8 @@ class TransactionController extends BaseController
         $comptes = $this->soldeModel->getTousComptesAvecSolde();
 
         $data = [
-            'comptes'     => $comptes,
-            'nbComptes'   => count($comptes),
+            'comptes' => $comptes,
+            'nbComptes' => count($comptes),
             'totalSoldes' => $this->soldeModel->getTotalSoldes(),
         ];
 

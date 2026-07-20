@@ -1,21 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-    <title>Mon solde</title>
-</head>
-<body>
-    <div class="container mt-4">
-        <h1>Mon solde</h1>
-        <?php if ($solde): ?>
-            <p>Votre solde actuel est de : <strong><?= number_format($solde['montant'], 2, ',', ' ') ?> Ar</strong></p>
-        <?php else: ?>
-            <p>Votre solde actuel est de : <strong>0,00 Ar</strong></p>
-        <?php endif; ?>
-        <a href="<?= base_url('espaceClient') ?>" class="btn btn-primary">Retour</a>
+<?= $this->extend('layouts/master') ?>
+<?= $this->section('content') ?>
+
+<div class="breadcrumb-custom animate-slideUp">
+    <a href="<?= base_url('espaceClient') ?>">Tableau de bord</a>
+    <span class="separator"><i class="bi bi-chevron-right"></i></span>
+    <span class="current">Mon solde</span>
+</div>
+
+<div class="page-header animate-slideUp">
+    <h1>Mon solde</h1>
+    <p class="page-subtitle">Consultez votre solde actuel</p>
+</div>
+
+<div class="row animate-slideUp delay-1">
+    <div class="col-lg-6 col-md-8">
+        <div class="balance-card text-center" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+            <div class="balance-label"><i class="bi bi-wallet2 me-2"></i> Solde disponible</div>
+            <?php if (isset($solde) && $solde): ?>
+                <div class="balance-amount mb-0" style="font-size: 3rem; margin-top: 1rem;"><?= number_format($solde['montant'], 0, ',', ' ') ?> Ar</div>
+            <?php else: ?>
+                <div class="balance-amount mb-0" style="font-size: 3rem; margin-top: 1rem;">0 Ar</div>
+            <?php endif; ?>
+        </div>
+        
+        <div class="mt-4 text-center">
+            <a href="<?= base_url('espaceClient') ?>" class="btn-custom btn-secondary-custom">
+                <i class="bi bi-arrow-left"></i> Retour au tableau de bord
+            </a>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+<?= $this->endSection() ?>

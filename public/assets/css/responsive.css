@@ -1,0 +1,116 @@
+/* ============================================
+   Responsive — Mobile First Breakpoints
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: var(--sidebar-width);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+
+    .top-navbar {
+        left: 0 !important;
+        padding-left: 60px;
+    }
+
+    .navbar-search {
+        width: 200px;
+    }
+
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        flex: 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --space-xl: 1.25rem;
+        --space-2xl: 2rem;
+    }
+
+    .content-wrapper {
+        padding: var(--space-md);
+        padding-top: calc(var(--navbar-height) + var(--space-md));
+    }
+
+    .top-navbar {
+        padding: 0 var(--space-md);
+        padding-left: 52px;
+    }
+
+    .navbar-search {
+        display: none;
+    }
+
+    .navbar-user .user-info {
+        display: none;
+    }
+
+    .page-header h1 {
+        font-size: var(--fs-2xl);
+    }
+
+    .stat-card {
+        padding: var(--space-lg);
+    }
+
+    .stat-card .stat-value {
+        font-size: var(--fs-xl);
+    }
+
+    .balance-card {
+        padding: var(--space-xl);
+    }
+
+    .balance-card .balance-amount {
+        font-size: var(--fs-2xl);
+    }
+
+    .form-card {
+        padding: var(--space-lg);
+    }
+
+    .table-custom thead th,
+    .table-custom tbody td {
+        padding: 10px 14px;
+    }
+
+    .quick-action {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .quick-action .action-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .login-form-container {
+        padding: 0 var(--space-sm);
+    }
+
+    .login-form-container h1 {
+        font-size: var(--fs-2xl);
+    }
+}
