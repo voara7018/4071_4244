@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\TransactionModel;
+use App\Models\SoldeModel;
 
 class TransactionController extends BaseController
 {
     protected $transactionModel;
+    protected $soldeModel;
 
     public function __construct()
     {
         $this->transactionModel = new TransactionModel();
+        $this->soldeModel = new SoldeModel();
     }
 
     public function gains()
@@ -21,6 +24,19 @@ class TransactionController extends BaseController
             'totalGeneral' => $this->transactionModel->getTotalGains(),
         ];
 
-        return view('admin/situation', $data);
+        return view('situation', $data);
+    }
+
+    public function comptes()
+    {
+        $comptes = $this->soldeModel->getTousComptesAvecSolde();
+
+        $data = [
+            'comptes'     => $comptes,
+            'nbComptes'   => count($comptes),
+            'totalSoldes' => $this->soldeModel->getTotalSoldes(),
+        ];
+
+        return view('comptes', $data);
     }
 }

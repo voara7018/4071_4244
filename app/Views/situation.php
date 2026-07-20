@@ -38,7 +38,7 @@
         </tbody>
     </table>
 
-    <a href="/admin/situation/comptes" class="btn btn-secondary">Voir situation des comptes</a>
+    <a href="/situation/comptes" class="btn btn-secondary">Voir situation des comptes</a>
 
 </div>
 
