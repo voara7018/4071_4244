@@ -31,8 +31,8 @@
 - `OK_4244` TypeOperationsModel
 - `OK_4244` BaremeFraisModel
 - `OK_4244` ClientModel
-- SoldeModel
-- TransactionModel
+- `OK_4244` SoldeModel
+- `OK_4244` TransactionModel
 
 ## 6. Création des controllers
 - `OK_4071` PrefixController
@@ -41,21 +41,17 @@
 - `OK_4244` ClientsController
 
 ## 7. Développement de l'espace opérateur
-- Gestion des préfixes
-  - Ajouter
-  - Modifier
-  - Supprimer
-  - Lister
-- Gestion des types d'opérations
-  - Dépôt
-  - Retrait
-  - Transfert
-- Gestion des barèmes de frais
-  - Ajouter une tranche
-  - Modifier une tranche
-  - Supprimer une tranche
-- Consultation des gains par frais
-- Consultation de la situation des comptes clients
+- `OK_4071` Gestion des préfixes
+  - `OK_4071` Ajouter
+  - `OK_4071` Lister
+- `OK_4071` Gestion des types d'opérations
+  - `OK_4071` Dépôt
+  - `OK_4071` Retrait
+  - `OK_4071` Transfert
+- `OK_4071` Gestion des barèmes de frais
+  - `OK_4071` Ajouter une tranche
+- `OK_4071` Consultation des gains par frais
+- `OK_4071` Consultation de la situation des comptes clients
 
 ## 7. Développement de l'espace client
 - `OK_4244` Connexion avec le numéro de téléphone
@@ -67,14 +63,8 @@
 - `OK_4244` Historique des transactions
 
 ## 8. Validation des opérations
-- Vérification du solde avant retrait
-- Vérification du solde avant transfert
-- Calcul automatique des frais
-- Mise à jour automatique des soldes
-- Enregistrement des transactions
-
-## 9. Interface utilisateur
-- Tableau de bord opérateur
-- Tableau de bord client
-- Pages CRUD
-- Messages de succès et d'erreur
+- `OK_4244` Vérification du solde avant retrait
+- `OK_4244` Vérification du solde avant transfert
+- `OK_4244` Calcul automatique des frais
+- `OK_4244` Mise à jour automatique des soldes
+- `OK_4244` Enregistrement des transactions

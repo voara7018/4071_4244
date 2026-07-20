@@ -1,46 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-    <title>Historique des transactions</title>
-</head>
-<body>
-    <div class="container mt-4">
-        <h1>Historique des transactions</h1>
-        <?php if (empty($transactions)): ?>
-            <p>Aucune transaction pour le moment.</p>
-        <?php else: ?>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Montant</th>
-                        <th>Frais</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($transactions as $t): ?>
-                        <tr>
-                            <td><?= $t['date_transaction'] ?></td>
-                            <td><?= $t['type_operation'] ?></td>
-                            <td><?= number_format($t['montant'], 2, ',', ' ') ?> Ar</td>
-                            <td>
-                                <?php if ($t['type_operation'] == 'DEPOT') { ?>
-                                    Pas de frais
-                                <?php } else { ?>
-                                    <?= number_format($t['frais'], 2, ',', ' ') ?> Ar
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php endif; ?>
-        <a href="<?= base_url('espaceClient') ?>" class="btn btn-primary">Retour</a>
+<?= $this->extend('layouts/master') ?>
+<?= $this->section('content') ?>
+
+<div class="breadcrumb-custom animate-slideUp">
+    <a href="<?= base_url('espaceClient') ?>">Tableau de bord</a>
+    <span class="separator"><i class="bi bi-chevron-right"></i></span>
+    <span class="current">Historique</span>
+</div>
+
+<div class="page-header animate-slideUp">
+    <h1>Historique des transactions</h1>
+    <p class="page-subtitle">Consultez vos dernières opérations</p>
+</div>
+
+<div class="row animate-slideUp delay-1">
+    <div class="col-12">
+        <div class="card-custom">
+            <div class="card-body p-0">
+                <?php if (empty($transactions)): ?>
+                    <div class="empty-state">
+                        <i class="bi bi-inbox"></i>
+                        <h4>Aucune transaction</h4>
+                        <p>Vous n'avez pas encore effectué de transaction sur votre compte.</p>
+                    </div>
+                <?php else: ?>
+                    <div class="p-4">
+                        <?php foreach ($transactions as $t): ?>
+                            <div class="transaction-item">
+                                <div class="tx-icon <?= strtolower($t['type_operation']) ?>">
+                                    <?php if ($t['type_operation'] == 'DEPOT'): ?>
+                                        <i class="bi bi-arrow-down-left"></i>
+                                    <?php elseif ($t['type_operation'] == 'RETRAIT'): ?>
+                                        <i class="bi bi-arrow-up-right"></i>
+                                    <?php else: ?>
+                                        <i class="bi bi-arrow-left-right"></i>
+                                    <?php endif; ?>
+                                </div>
+                                
+                                <div class="tx-info">
+                                    <div class="tx-type"><?= ucfirst(strtolower($t['type_operation'])) ?></div>
+                                    <div class="tx-date"><?= date('d/m/Y H:i', strtotime($t['date_transaction'])) ?></div>
+                                </div>
+                                
+                                <div>
+                                    <div class="tx-amount <?= $t['type_operation'] == 'DEPOT' ? 'positive' : 'negative' ?>">
+                                        <?= $t['type_operation'] == 'DEPOT' ? '+' : '-' ?><?= number_format($t['montant'], 0, ',', ' ') ?> Ar
+                                    </div>
+                                    <div class="tx-fees">
+                                        <?php if ($t['type_operation'] == 'DEPOT'): ?>
+                                            Sans frais
+                                        <?php else: ?>
+                                            Frais: <?= number_format($t['frais'], 0, ',', ' ') ?> Ar
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+
+<?= $this->endSection() ?>
