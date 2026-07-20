@@ -26,7 +26,6 @@ class TransactionModel extends Model
             ->getResultArray();
     }
 
-    // Total général des frais
     public function getTotalGains()
     {
         $result = $this->db->table('transactions')

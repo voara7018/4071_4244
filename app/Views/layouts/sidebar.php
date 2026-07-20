@@ -10,13 +10,17 @@
         <div class="logo-text">Mobile<span>Money</span></div>
     </div>
 
-    <!-- Navigation -->
     <div class="sidebar-nav">
         <?php if ($isAdmin): ?>
-        <!-- Admin Section -->
         <div class="nav-section-title">Administration</div>
         <div class="nav-item">
-            <a href="<?= base_url('/') ?>" class="nav-link <?= (base_url('/') === $currentUrl || str_contains($currentUrl, 'insert_operation')) ? 'active' : '' ?>">
+            <a href="<?= base_url('admin/dashboard') ?>" class="nav-link <?= str_contains($currentUrl, 'admin/dashboard') ? 'active' : '' ?>">
+                <i class="bi bi-speedometer2"></i>
+                <span>Tableau de bord</span>
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="<?= base_url('operation') ?>" class="nav-link <?= str_contains($currentUrl, 'operation') ? 'active' : '' ?>">
                 <i class="bi bi-gear"></i>
                 <span>Barème des frais</span>
             </a>
@@ -28,20 +32,19 @@
             </a>
         </div>
         <div class="nav-item">
-            <a href="<?= base_url('situation') ?>" class="nav-link <?= str_contains($currentUrl, 'situation') && !str_contains($currentUrl, 'comptes') ? 'active' : '' ?>">
+            <a href="<?= base_url('situation_financiere') ?>" class="nav-link <?= str_contains($currentUrl, 'situation_financiere') ? 'active' : '' ?>">
                 <i class="bi bi-graph-up"></i>
                 <span>Situation gains</span>
             </a>
         </div>
         <div class="nav-item">
-            <a href="<?= base_url('situation/comptes') ?>" class="nav-link <?= str_contains($currentUrl, 'comptes') ? 'active' : '' ?>">
+            <a href="<?= base_url('comptabilite') ?>" class="nav-link <?= str_contains($currentUrl, 'comptabilite') ? 'active' : '' ?>">
                 <i class="bi bi-people"></i>
                 <span>Comptes clients</span>
             </a>
         </div>
 
         <?php else: ?>
-        <!-- Client Section -->
         <div class="nav-section-title">Mon compte</div>
         <div class="nav-item">
             <a href="<?= base_url('espaceClient') ?>" class="nav-link <?= str_contains($currentUrl, 'espaceClient') ? 'active' : '' ?>">
@@ -84,7 +87,6 @@
         <?php endif; ?>
     </div>
 
-    <!-- Profile -->
     <div class="sidebar-profile">
         <div class="profile-info">
             <div class="profile-avatar">
