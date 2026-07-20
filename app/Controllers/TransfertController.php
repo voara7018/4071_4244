@@ -63,6 +63,10 @@ class TransfertController extends BaseController {
         $totalCoutOperation = 0;
         $operationsPretes = [];
 
+        $senderUser = $clientModel->where('id', $userId)->first();
+        $senderOpInfo = $this->getOperateurInfo($senderUser['numero_telephone'], $allPrefixes, $operateursById);
+        $isSenderLocal = $senderOpInfo['isLocal'];
+
         foreach ($destinataires as $destNumero) {
             $destClient = $this->getOrCreateClient($destNumero, $clientModel, $soldeModel);
             $opInfo = $this->getOperateurInfo($destNumero, $allPrefixes, $operateursById);
@@ -73,6 +77,7 @@ class TransfertController extends BaseController {
 
             $coutDetails = $this->calculerCoutsDestinataire(
                 $montantParDestinataire, 
+                $isSenderLocal,
                 $opInfo['isLocal'], 
                 $inclureFrais, 
                 $pourcentageExterne, 
@@ -135,17 +140,22 @@ class TransfertController extends BaseController {
         return ['id' => $operateurId, 'isLocal' => $isLocal];
     }
 
-    private function calculerCoutsDestinataire($montantParDestinataire, $isLocal, $inclureFrais, $pourcentageExterne, $typeOpTransfertId, $typeOpRetraitId, $baremeFraisModel) {
+    private function calculerCoutsDestinataire($montantParDestinataire, $isSenderLocal, $isReceiverLocal, $inclureFrais, $pourcentageExterne, $typeOpTransfertId, $typeOpRetraitId, $baremeFraisModel) {
         $fraisRetrait = 0;
         $fraisExterne = 0;
         $montantAEnvoyer = $montantParDestinataire;
 
-        if ($isLocal && $inclureFrais) {
+        if ($isReceiverLocal && $inclureFrais) {
             $fraisRetrait = $this->trouverFraisDansBareme($montantParDestinataire, $typeOpRetraitId, $baremeFraisModel);
             $montantAEnvoyer += $fraisRetrait;
         }
 
-        if (!$isLocal) {
+        // Si l'expéditeur est local et le destinataire externe (Dette)
+        if ($isSenderLocal && !$isReceiverLocal) {
+            $fraisExterne = ($montantParDestinataire * $pourcentageExterne) / 100;
+        }
+        // Si l'expéditeur est externe et le destinataire local (Gain)
+        else if (!$isSenderLocal && $isReceiverLocal) {
             $fraisExterne = ($montantParDestinataire * $pourcentageExterne) / 100;
         }
 

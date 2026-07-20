@@ -11,7 +11,7 @@ class PrefixeController extends BaseController
     public function index()
     {
         $prefixesModel = new PrefixesModel();
-        $data['prefixes'] = $prefixesModel->findAll();
+        $data['prefixes'] = $prefixesModel->getPrefixesWithOperateurs();
         $operateursModel = new OperateurModel();
         $data['operateurs'] = $operateursModel->findAll();
         return view('prefixes', $data);

@@ -22,6 +22,9 @@ class TransactionController extends BaseController
         $data = [
             'parType' => $this->transactionModel->getGainsParType(),
             'totalGeneral' => $this->transactionModel->getTotalGains(),
+            'gainsInternes' => $this->transactionModel->getGainsInternes(),
+            'gainsExternes' => $this->transactionModel->getGainsExternes(),
+            'dettesOperateurs' => $this->transactionModel->getDettesOperateurs(),
         ];
 
         return view('situation', $data);
