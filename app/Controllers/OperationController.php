@@ -5,7 +5,7 @@ use App\Controllers\BaseController;
 use App\Models\TypeOperationsModel;
 use App\Models\BaremeFraisModel;
 
-class OperationAdminController extends BaseController
+class OperationController extends BaseController
 {
     public function index()
     {
