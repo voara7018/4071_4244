@@ -5,8 +5,12 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/test', 'Test::index');
+
+/* admin */
+$routes->get('/', 'OperationAdminController::index');
+$routes->post('/insert_operation', 'OperationAdminController::insert_operation');
 $routes->get('/prefixes', 'PrefixeController::index');
 $routes->post('/prefixes/insert', 'PrefixeController::insert');
 
+
+/* clients */

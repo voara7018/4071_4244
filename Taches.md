@@ -26,11 +26,11 @@
 - `OK_4071` Table `slode`
 - `OK_4071` Table `transactions`
 
-## 5. Création des modèles (Models)
+## 5. Création des modèles
 - PrefixModel
+- TypeOperationsModel
 - ClientModel
-- TypeOperationModel
-- TrancheFraisModel
+- BaremeFraisModel
 - CompteModel
 - TransactionModel
 
