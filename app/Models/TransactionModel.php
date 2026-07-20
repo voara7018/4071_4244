@@ -36,4 +36,15 @@ class TransactionModel extends Model
 
         return $result->frais ?? 0;
     }
+    public function getTransactionsByUserId($userId) {
+        return $this->select('transactions.*, types_operation.type_operation')
+                     ->join('types_operation', 'types_operation.id = transactions.type_operation_id')
+                     ->where('transactions.user_id', $userId)
+                     ->orderBy('transactions.date_transaction', 'DESC')
+                     ->findAll();
+    }
+
+    public function insertTransaction($data) {
+        return $this->insert($data);
+    }
 }

@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <form action="<?= site_url('insert_operation') ?>" method="post">
+                <form action="<?= base_url('insert_operation') ?>" method="post">
                     <label for="code">Code:</label>
                     <select name="type_operation" id="type_operation">
                         <option value="">Selectionner</option>
