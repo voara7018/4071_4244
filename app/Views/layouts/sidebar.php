@@ -43,6 +43,12 @@
                 <span>Comptes clients</span>
             </a>
         </div>
+        <div class="nav-item">
+            <a href="<?= base_url('/commission') ?>" class="nav-link <?= str_contains($currentUrl, 'admin/dashboard') ? 'active' : '' ?>">
+                <i class="bi bi-speedometer2"></i>
+                <span>Commission</span>
+            </a>
+        </div>
 
         <?php else: ?>
         <div class="nav-section-title">Mon compte</div>

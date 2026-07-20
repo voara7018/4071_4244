@@ -39,7 +39,7 @@
                     <br>
                     <div class="form-group-custom">
                         <label for="operateur_id">Opérateur</label>
-                        <select id="operateur_id" name="operateur_id" class="form-input" required>
+                        <select id="operateur_id" name="operateurid" class="form-input" required>
                             <option value="">Sélectionnez un opérateur</option>
                             <?php foreach ($operateurs as $operateur) { ?>
                                 <option value="<?= $operateur['id'] ?>"><?= $operateur['nom'] ?></option>
@@ -54,6 +54,14 @@
                     </button>
                 </div>
             </form>
+            <br>
+            <div class="form-group-custom">
+                 <label for="prefixe"> Liste des préfixe</label>
+                        <?php foreach ($prefixes as $prefixe) { ?>
+                           <h3> <?= $prefixe['prefixes'] ?> </h3>
+                    <?php } ?>
+            </select>
+            </div>
         </div>
     </div>
 </div>
