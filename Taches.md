@@ -20,10 +20,10 @@
 
 ## 4. Création du script de la base
 - `OK_4071` Table `prefixes`
-- `OK_4071` Table `clients`
-- `OK_4071` Table `types_operations`
+- `OK_4071` Table `users`
+- `OK_4071` Tale `types_operations`
 - `OK_4071` Table `bareme_frais`
-- `OK_4071` Table `comptes`
+- `OK_4071` Table `slode`
 - `OK_4071` Table `transactions`
 
 ## 5. Création des modèles
