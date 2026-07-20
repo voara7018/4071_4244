@@ -12,5 +12,14 @@ class PrefixesModel extends Model
             'prefixes', 
             'statut'
         ];
+
+        public function getPrefixesWithOperateurs()
+        {
+            return $this->db->table('prefixes')
+                ->select('prefixes.*, operateurs.nom as operateur_nom')
+                ->join('operateurs', 'operateurs.id = prefixes.operateur_id', 'left')
+                ->get()
+                ->getResultArray();
+        }
     }
 ?>

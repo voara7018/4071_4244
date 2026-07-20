@@ -55,12 +55,32 @@
                 </div>
             </form>
             <br>
-            <div class="form-group-custom">
-                 <label for="prefixe"> Liste des préfixe</label>
-                        <?php foreach ($prefixes as $prefixe) { ?>
-                           <h3> <?= $prefixe['prefixes'] ?> </h3>
-                    <?php } ?>
-            </select>
+            <div class="form-group-custom mt-4">
+                 <label>Liste des préfixes existants</label>
+                 <div class="table-wrapper mt-2">
+                     <table class="table-custom">
+                         <thead>
+                             <tr>
+                                 <th>Préfixe</th>
+                                 <th>Opérateur</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                            <?php foreach ($prefixes as $prefixe): ?>
+                            <tr>
+                                <td class="fw-600"><?= esc($prefixe['prefixes']) ?></td>
+                                <td>
+                                    <?php if ($prefixe['operateur_nom']): ?>
+                                        <span class="badge-custom primary"><?= esc($prefixe['operateur_nom']) ?></span>
+                                    <?php else: ?>
+                                        <span class="badge-custom secondary">Inconnu</span>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                         </tbody>
+                     </table>
+                 </div>
             </div>
         </div>
     </div>

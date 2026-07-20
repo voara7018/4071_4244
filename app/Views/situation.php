@@ -25,10 +25,11 @@
 </div>
 
 <div class="row animate-slideUp delay-2">
-    <div class="col-12">
+    <div class="col-12 mb-4">
         <div class="card-custom">
-            <div class="card-header-custom">
-                <h5>Détails par type d'opération</h5>
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <h5>Gains Internes</h5>
+                <span class="badge-custom primary">Réseau Local</span>
             </div>
             <div class="card-body p-0">
                 <div class="table-wrapper">
@@ -42,12 +43,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (empty($parType)): ?>
+                            <?php if (empty($gainsInternes)): ?>
                                 <tr>
-                                    <td colspan="4" class="text-center py-4 text-muted">Aucune opération enregistrée pour le moment.</td>
+                                    <td colspan="4" class="text-center py-4 text-muted">Aucune opération interne enregistrée.</td>
                                 </tr>
                             <?php else: ?>
-                                <?php foreach ($parType as $t): ?>
+                                <?php foreach ($gainsInternes as $t): ?>
                                 <tr>
                                     <td>
                                         <div class="d-flex align-items-center gap-2">
@@ -58,6 +59,100 @@
                                     <td><span class="badge-custom secondary"><?= $t['nb_operations'] ?></span></td>
                                     <td class="fw-600 text-success-custom">+ <?= number_format($t['total_frais'], 0, ',', ' ') ?> Ar</td>
                                     <td><span class="badge-custom success"><span class="dot"></span> Actif</span></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gains Externes -->
+    <div class="col-12 mb-4">
+        <div class="card-custom">
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <h5>Gains Externes</h5>
+                <span class="badge-custom warning">Autres Réseaux</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-wrapper">
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Type d'opération</th>
+                                <th>Nombre d'opérations</th>
+                                <th>Total Commissions</th>
+                                <th>Statut</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if (empty($gainsExternes)): ?>
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">Aucune opération externe enregistrée.</td>
+                                </tr>
+                            <?php else: ?>
+                                <?php foreach ($gainsExternes as $t): ?>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <i class="bi bi-globe text-primary"></i>
+                                            <span class="fw-600"><?= esc($t['type_operation']) ?></span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-custom secondary"><?= $t['nb_operations'] ?></span></td>
+                                    <td class="fw-600 text-success-custom">+ <?= number_format($t['total_commission_externe'], 0, ',', ' ') ?> Ar</td>
+                                    <td><span class="badge-custom success"><span class="dot"></span> Actif</span></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dettes Opérateurs -->
+    <div class="col-12">
+        <div class="card-custom border-danger-custom">
+            <div class="card-header-custom d-flex justify-content-between align-items-center">
+                <h5 class="text-danger-custom">Dettes</h5>
+                <i class="bi bi-exclamation-triangle text-danger-custom"></i>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-wrapper">
+                    <table class="table-custom">
+                        <thead>
+                            <tr>
+                                <th>Opérateur</th>
+                                <th>Nombre de transferts</th>
+                                <th>Montant total à envoyer</th>
+                                <th>Action requise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if (empty($dettesOperateurs)): ?>
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">Aucune dette envers les autres opérateurs.</td>
+                                </tr>
+                            <?php else: ?>
+                                <?php foreach ($dettesOperateurs as $dette): ?>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="avatar-custom" style="width:32px; height:32px; background:#f8d7da; color:#dc3545; display:flex; align-items:center; justify-content:center; border-radius:50%; font-weight:bold; font-size:12px;">
+                                                <?= strtoupper(substr($dette['operateur_nom'], 0, 1)) ?>
+                                            </div>
+                                            <span class="fw-600"><?= esc($dette['operateur_nom']) ?></span>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge-custom secondary"><?= $dette['nb_operations'] ?></span></td>
+                                    <td class="fw-600 text-danger-custom">- <?= number_format($dette['total_du'], 0, ',', ' ') ?> Ar</td>
+                                    <td>
+                                        <button class="btn-custom btn-sm btn-danger-custom">Régler</button>
+                                    </td>
                                 </tr>
                                 <?php endforeach; ?>
                             <?php endif; ?>

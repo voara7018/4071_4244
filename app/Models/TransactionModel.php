@@ -59,11 +59,24 @@ public function getGainsExternes()
     return $this->db->table('transactions')
         ->select('types_operation.type_operation, SUM(transactions.frais) as total_frais, SUM(transactions.frais_externe) as total_commission_externe, COUNT(transactions.id) as nb_operations')
         ->join('types_operation', 'types_operation.id = transactions.type_operation_id')
+        ->join('operateurs', 'operateurs.id = transactions.operateur_destinataire_id', 'left')
         ->where('transactions.frais_externe IS NOT NULL')
+        ->where('operateurs.is_local', 1)
         ->groupBy('types_operation.id')
         ->get()
         ->getResultArray();
 }   
+
+public function getDettesOperateurs()
+{
+    return $this->db->table('transactions')
+        ->select('operateurs.nom as operateur_nom, SUM(transactions.frais_externe) as total_du, COUNT(transactions.id) as nb_operations')
+        ->join('operateurs', 'operateurs.id = transactions.operateur_destinataire_id')
+        ->where('operateurs.is_local', 0) 
+        ->groupBy('operateurs.id')
+        ->get()
+        ->getResultArray();
+}
     public function insertTransaction($data) {
         return $this->insert($data);
     }
