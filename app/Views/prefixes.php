@@ -35,13 +35,16 @@
                     <div class="input-group-custom">
                         <span class="input-prepend"><i class="bi bi-telephone-plus"></i></span>
                         <input type="text" id="prefixes" name="prefixes" class="form-input" placeholder="Entrez le préfixe" required>
+                    </div>
+                    <br>
+                    <div class="form-group-custom">
                         <label for="operateur_id">Opérateur</label>
                         <select id="operateur_id" name="operateur_id" class="form-input" required>
                             <option value="">Sélectionnez un opérateur</option>
                             <?php foreach ($operateurs as $operateur) { ?>
                                 <option value="<?= $operateur['id'] ?>"><?= $operateur['nom'] ?></option>
                             <?php } ?>
-                        </select>
+                            </select>
                     </div>
                 </div>
 

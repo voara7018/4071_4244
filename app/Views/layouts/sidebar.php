@@ -7,7 +7,7 @@
         <div class="logo-icon">
             <i class="bi bi-wallet2"></i>
         </div>
-        <div class="logo-text">Mobile<span>Money</span></div>
+        <div class="logo-text">LoVo<span>Money</span></div>
     </div>
 
     <div class="sidebar-nav">

@@ -9,7 +9,7 @@
 
 <div class="page-header animate-slideUp">
     <h1>Faire un transfert</h1>
-    <p class="page-subtitle">Envoyez de l'argent à un autre utilisateur Mobile Money</p>
+    <p class="page-subtitle">Envoyez de l'argent à un autre utilisateur</p>
 </div>
 
 <div class="row animate-slideUp delay-1">
@@ -28,6 +28,7 @@
                     <div class="input-group-custom">
                         <span class="input-prepend"><i class="bi bi-person"></i></span>
                         <input type="text" id="destinataire" name="destinataire" class="form-input" placeholder="Ex: 0340012345" required>
+                        <button type="button" class="btn-custom btn-primary-custom ms-2" ><i class="bi bi-plus"></i></button>
                     </div>
                 </div>
 
@@ -50,5 +51,27 @@
         </div>
     </div>
 </div>
+<script>
+function ajouterChamp() {
+    let container = document.getElementById("listeDestinataires");
 
+    let div = document.createElement("div");
+    div.className = "input-group mb-2";
+
+    div.innerHTML = `
+        <input type="text" name="destinataire[]" class="form-input"
+            placeholder="Ex: 0340012345" required>
+
+        <button type="button" class="btn btn-danger ms-2" onclick="supprimerChamp(this)">
+            -
+        </button>
+    `;
+
+    container.appendChild(div);
+}
+
+function supprimerChamp(button) {
+    button.parentElement.remove();
+}
+</script>
 <?= $this->endSection() ?>

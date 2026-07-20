@@ -13,6 +13,11 @@ CREATE TABLE operateurs (
     nom TEXT,
     is_local INTEGER
 );
+INSERT INTO operateurs(nom, is_local) VALUES
+('LoVo', 1),
+('Orange', 0),
+('Airtel', 0),
+('Yas', 0);
 
 CREATE TABLE commissions_externes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
