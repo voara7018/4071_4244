@@ -6,13 +6,11 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-/* admin login & dashboard */
+/* admin */
 $routes->get('/admin', 'AdminController::login');
 $routes->post('/admin/login', 'AdminController::authenticate');
 $routes->get('/admin/dashboard', 'AdminController::dashboard');
 $routes->get('/admin/logout', 'AdminController::logout');
-
-/* admin actions */
 $routes->get('/operation', 'OperationController::index');
 $routes->post('/insert_operation', 'OperationController::insert_operation');
 $routes->get('/prefixes', 'PrefixeController::index');
