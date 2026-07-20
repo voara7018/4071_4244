@@ -19,10 +19,9 @@ class PrefixeController extends BaseController
     public function insert(){
         $prefixesModel = new PrefixesModel();
         $prefixes = $this->request->getPost('prefixes');
-        $operateursModel = new OperateurModel();
-        $operateurs['operateurs'] = $operateursModel->findAll();
+        $operateurs = $this->request->getPost('operateurid');
         $data = [
-            'operateur_id' => $operateursModel->getOperatorId(),
+            'operateur_id' => $operateurs,
             'prefixes' => $prefixes,
             'statut' => 1
         ];
