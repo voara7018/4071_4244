@@ -24,6 +24,8 @@ CREATE TABLE commissions_externes (
     pourcentage INTEGER
 );
 
+INSERT INTO commissions_externes(pourcentage) VALUES
+(5);
 
 CREATE TABLE prefixes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
