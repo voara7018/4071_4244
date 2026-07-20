@@ -10,7 +10,7 @@ class TransactionModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'user_id', 'type_operation_id', 'montant', 'frais',
-        'solde_avant', 'solde_apres', 'compte_destinataire_id', 'date_operation'
+        'solde_avant', 'solde_apres', 'compte_destinataire_id', 'date_operation', 'frais_externe', 'operateur_destinataire_id'
     ];
     protected $useTimestamps = false;
 
