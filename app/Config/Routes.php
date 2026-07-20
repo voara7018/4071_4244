@@ -17,6 +17,10 @@ $routes->get('/prefixes', 'PrefixeController::index');
 $routes->post('/prefixes/insert', 'PrefixeController::insert');
 $routes->get('/situation_financiere', 'TransactionController::gains');
 $routes->get('/comptabilite', 'TransactionController::comptes');
+$routes->get('/commission', 'CommissionController::index');
+$routes->get('/commission/insert', 'CommissionController::insert');
+
+
 
 
 /* clients */
@@ -28,7 +32,7 @@ $routes->get('/faireDepot', 'ClientsController::faireDepot');
 $routes->post('/faireDepot', 'ClientsController::traiterDepot');
 $routes->get('/faireRetrait', 'ClientsController::faireRetrait');
 $routes->post('/faireRetrait', 'ClientsController::traiterRetrait');
-$routes->get('/faireTransfert', 'ClientsController::faireTransfert');
-$routes->post('/faireTransfert', 'ClientsController::traiterTransfert');
+$routes->get('/faireTransfert', 'TransfertController::faireTransfert');
+$routes->post('/faireTransfert', 'TransfertController::traiterTransfert');
 $routes->get('/voirHistorique', 'ClientsController::voirHistorique');
 $routes->get('/deconnexion', 'ClientsController::deconnexion');

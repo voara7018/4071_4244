@@ -8,15 +8,9 @@ class CommissionsExterneModel extends Model {
 	protected $primaryKey = 'id';
 	protected $allowedFields = [
         'id',
-        'operateur_id',
-        'montant_min',
-        'montant_max',
-        'frais'
-    ];
+        'pourcentage',
 
-    public function getCommissionsExternesByOperateurId($operateurId) {
-        return $this->where('operateur_id', $operateurId)->findAll();
-    }
+    ];
     
 
 }

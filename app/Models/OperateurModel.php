@@ -12,4 +12,10 @@ class OperateurModel extends Model {
         'is_local'
 
     ];
+
+    public function getOperatorId() {
+        $operator = $this->where('is_local', 1)->first();
+        return $operator ? $operator['id'] : null;
+    }
+
 }
