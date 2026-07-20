@@ -45,14 +45,4 @@
     </div>
 </div>
 
-<div class="row mt-4 animate-slideUp delay-2">
-    <div class="col-12">
-        <div class="card-custom text-center p-5">
-            <i class="bi bi-shield-check text-success" style="font-size: 4rem;"></i>
-            <h3 class="mt-3">Système Sécurisé</h3>
-            <p class="text-muted">Vous êtes connecté en tant qu'administrateur. Vous avez accès à la configuration globale des frais et à la gestion des comptes.</p>
-        </div>
-    </div>
-</div>
-
 <?= $this->endSection() ?>

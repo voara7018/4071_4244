@@ -1,18 +1,13 @@
 <header class="top-navbar">
     <div class="navbar-search">
-        <i class="bi bi-search search-icon"></i>
-        <input type="text" placeholder="Rechercher...">
     </div>
 
-    <!-- Right Actions -->
     <div class="navbar-actions">
-        <!-- Notifications -->
         <button class="navbar-action-btn" title="Notifications">
             <i class="bi bi-bell"></i>
             <span class="badge-dot"></span>
         </button>
 
-        <!-- User Dropdown -->
         <div class="dropdown">
             <button class="navbar-user dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="user-avatar">

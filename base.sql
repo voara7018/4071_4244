@@ -4,11 +4,28 @@ DROP TABLE IF EXISTS bareme_frais;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS solde;
 DROP TABLE IF EXISTS transactions;  
+DROP TABLE IF EXISTS operateurs;
+DROP TABLE IF EXISTS commissions_externes;
+
+
+CREATE TABLE operateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom TEXT,
+    is_local INTEGER
+);
+
+CREATE TABLE commissions_externes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pourcentage INTEGER
+);
+
 
 CREATE TABLE prefixes (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    operateur_id INTEGER,
     prefixes TEXT,
-    statut INTEGER
+    statut INTEGER,
+    FOREIGN KEY (operateur_id) REFERENCES operateurs(id)
 );
 
 CREATE TABLE types_operation (
@@ -78,7 +95,8 @@ INSERT INTO users(numero_telephone) VALUES
 ('0340348384'),
 ('0321253840'),
 ('0340340340'),
-('0381183803');
+('0381183803'),
+('0344310340');
 
 CREATE TABLE solde (
     user_id INTEGER,
@@ -92,29 +110,10 @@ CREATE TABLE transactions (
     type_operation_id INTEGER,
     montant REAL,
     frais REAL,
+    frais_externe REAL,
+    operateur_destinataire_id INTEGER,
     date_transaction DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (type_operation_id) REFERENCES types_operation(id)
 );
 
-INSERT INTO bareme_frais(type_operation_id, montant_min, montant_max, frais) VALUES
-(1, 0, 1000, 10),
-(1, 1001, 5000, 20),
-(1, 5001, 10000, 30),
-(2, 0, 1000, 15),
-(2, 1001, 5000, 25),
-(2, 5001, 10000, 35),
-(3, 0, 1000, 5),
-(3, 1001, 5000, 10),
-(3, 5001, 10000, 15);
-
-INSERT INTO users(numero_telephone) VALUES
-('0341234567');
-
-INSERT INTO transactions(user_id, type_operation_id, montant, frais) VALUES
-(1, 1, 500, 10);
-
-
-
-SELECT * FROM transactions 
-join types_operation on transactions.type_operation_id = types_operation.id group by types_operation.id; 

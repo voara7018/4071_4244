@@ -53,6 +53,10 @@
                         Se connecter <i class="bi bi-arrow-right"></i>
                     </button>
                 </form>
+                <div class="mt-md text-center">
+                    <p>Vous etes un <a href="/admin">administrateur </a></p>
+                </div>
+                
             </div>
         </div>
     </div>
