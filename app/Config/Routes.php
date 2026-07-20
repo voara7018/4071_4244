@@ -11,6 +11,7 @@ $routes->get('/', 'OperationController::index');
 $routes->post('/insert_operation', 'OperationController::insert_operation');
 $routes->get('/prefixes', 'PrefixeController::index');
 $routes->post('/prefixes/insert', 'PrefixeController::insert');
+$routes->get('/situation', 'TransactionController::gains');
 
 /* clients */
 $routes->get('/login', 'ClientsController::index');
