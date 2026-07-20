@@ -24,5 +24,24 @@ class SoldeModel extends Model {
     public function updateSolde($userId, $montant) {
         return $this->where('user_id', $userId)->set('montant', $montant)->update();
     }
+      public function getTousComptesAvecSolde()
+    {
+        return $this->db->table('users')
+            ->select('users.id, users.numero_telephone, users.created_at, solde.montant')
+            ->join('solde', 'solde.user_id = users.id', 'left')
+            ->orderBy('solde.montant', 'DESC')
+            ->get()
+            ->getResultArray();
+    }
+
+    public function getTotalSoldes()
+    {
+        $result = $this->db->table('solde')
+            ->selectSum('montant')
+            ->get()
+            ->getRow();
+
+        return $result->montant ?? 0;
+    }
     
 }

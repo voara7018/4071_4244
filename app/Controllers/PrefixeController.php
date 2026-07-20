@@ -9,7 +9,9 @@ class PrefixeController extends BaseController
 {
     public function index(): string
     {
-        return view('prefixes');
+        $prefixesModel = new PrefixesModel();
+        $data['prefixes'] = $prefixesModel->findAll();
+        return view('prefixes', $data);
     }
     public function insert(){
         $prefixesModel = new PrefixesModel();
