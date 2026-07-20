@@ -54,3 +54,25 @@ CREATE TABLE transactions (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (type_operation_id) REFERENCES types_operation(id)
 );
+
+INSERT INTO bareme_frais(type_operation_id, montant_min, montant_max, frais) VALUES
+(1, 0, 1000, 10),
+(1, 1001, 5000, 20),
+(1, 5001, 10000, 30),
+(2, 0, 1000, 15),
+(2, 1001, 5000, 25),
+(2, 5001, 10000, 35),
+(3, 0, 1000, 5),
+(3, 1001, 5000, 10),
+(3, 5001, 10000, 15);
+
+INSERT INTO users(numero_telephone) VALUES
+('0341234567');
+
+INSERT INTO transactions(user_id, type_operation_id, montant, frais) VALUES
+(1, 1, 500, 10);
+
+
+
+SELECT * FROM transactions 
+join types_operation on transactions.type_operation_id = types_operation.id group by types_operation.id; 
