@@ -86,20 +86,19 @@
 
 ## 3. Développement Côté Opérateur
 - `OK_4244` Modifier `PrefixeController.php` et la vue `prefixes.php` : Ajouter un champ pour choisir ou définir l'opérateur associé au préfixe
-- Ajouter `CommissionController.php` et la vue `commission.php` : Interface de configuration du pourcentage de commission externe
-- Modifier `app/Config/Routes.php` et `app/Views/layouts/sidebar.php` : Ajouter les routes et les liens pour la nouvelle page de commission
-- Modifier `TransactionController.php` et la vue `situation.php` :
-  - Séparer les gains provenant des frais (opérateur) et les gains des commissions supplémentaires (autres opérateurs)
-  - Ajouter un tableau affichant les montants à envoyer (dettes) à chaque opérateur externe
+- `OK_4071` Ajouter `CommissionController.php` et la vue `commission.php` : Interface de configuration du pourcentage de commission externe
+- `OK_4071` Modifier `app/Config/Routes.php` et `app/Views/layouts/sidebar.php` : Ajouter les routes et les liens pour la nouvelle page de commission
+- `OK_4071` Modifier `TransactionController.php` et la vue `situation.php` :
+  - `OK_4071` Séparer les gains provenant des frais (opérateur) et les gains des commissions supplémentaires (autres opérateurs)
+  - `OK_4071` Ajouter un tableau affichant les montants à envoyer (dettes) à chaque opérateur externe
 
 ## 4. Développement Côté Client
-- Modifier `faireTransfert.php` :
-  - Modifier le champ de saisie du destinataire pour accepter plusieurs numéros séparés par des virgules
-  - Ajouter une case à cocher "Option inclure les frais de retrait lors de l'envoi"
-- Modifier `ClientsController.php` (méthode `traiterTransfert`) :
-  - Ajouter la logique de division du montant total par le nombre de destinataires (Envoi multiple)
-  - Ajouter la détection de l'opérateur destinataire (interne ou externe) via le préfixe
-  - Ajouter le calcul de la commission externe si transfert vers un autre opérateur
-  - Ajouter le calcul des "frais de retrait" si l'option est cochée : ajouter ce coût au débit de l'expéditeur pour que le bénéficiaire reçoive le montant brut nécessaire
-  - Modifier l'enregistrement de la transaction pour inclure `frais_externe` et `operateur_destinataire_id`
-
+- `OK_4244` Modifier la vue `faireTransfert.php` :
+  - `OK_4244` Modifier le champ de saisie du destinataire pour accepter plusieurs numéros séparés par des virgules
+  - `OK_4244` Ajouter une case à cocher "Option : Inclure les frais de retrait lors de l'envoi"
+- `OK_4244` Modifier `ClientsController.php` (méthode `traiterTransfert`) :
+  - `OK_4244` Ajouter la logique de division du montant total par le nombre de destinataires (Envoi multiple)
+  - `OK_4244` Ajouter la détection de l'opérateur destinataire (interne ou externe) via le préfixe
+  - `OK_4244` Ajouter le calcul de la commission externe (`% supplémentaire`) si transfert vers un autre opérateur, et l'imputer à l'expéditeur
+  - `OK_4244` Ajouter le calcul des "frais de retrait" si l'option est cochée : ajouter ce coût au débit de l'expéditeur pour que le bénéficiaire reçoive le montant brut nécessaire
+  - `OK_4244` Modifier l'enregistrement de la transaction pour inclure `frais_externe` et `operateur_destinataire_id`

@@ -7,6 +7,9 @@ use App\Models\SoldeModel;
 use App\Models\TransactionModel;
 use App\Models\BaremeFraisModel;
 use App\Models\TypeOperationsModel;
+use App\Models\CommissionsExterneModel;
+use App\Models\PrefixesModel;
+use App\Models\OperateurModel;
 
 class ClientsController extends BaseController {
     public function index() {
@@ -128,66 +131,6 @@ class ClientsController extends BaseController {
         return redirect()->to('/voirSolde');
     }
 
-    public function faireTransfert() {
-        if (!session()->get('user_id')) {
-            return redirect()->to('/login');
-        }
-        return view('faireTransfert');
-    }
-
-    public function traiterTransfert() {
-        if (!session()->get('user_id')) {
-            return redirect()->to('/login');
-        }
-
-        $montant = $this->request->getPost('montant');
-        $destinataire = $this->request->getPost('destinataire');
-        $userId = session()->get('user_id');
-
-        $clientModel = new ClientModel();
-        $dest = $clientModel->getClientByNumeroTelephone($destinataire);
-        if (!$dest) {
-            return redirect()->to('/faireTransfert')->with('error', 'Destinataire introuvable.');
-        }
-
-        $typeOpModel = new TypeOperationsModel();
-        $typeOp = $typeOpModel->where('code', 'transfert')->first();
-
-        $baremeFraisModel = new BaremeFraisModel();
-        $baremes = $baremeFraisModel->where('type_operation_id', $typeOp['id'])->findAll();
-        $frais = 0;
-        foreach ($baremes as $bareme) {
-            if ($montant >= $bareme['montant_min'] && $montant <= $bareme['montant_max']) {
-                $frais = $bareme['frais'];
-                break;
-            }
-        }
-
-        $soldeModel = new SoldeModel();
-        $solde = $soldeModel->getSoldeByUserId($userId);
-        if (!$solde || $solde['montant'] < ($montant + $frais)) {
-            return redirect()->to('/faireTransfert')->with('error', 'Solde insuffisant.');
-        }
-
-        $soldeModel->updateSolde($userId, $solde['montant'] - $montant - $frais);
-
-        $soldeDest = $soldeModel->getSoldeByUserId($dest['id']);
-        if ($soldeDest) {
-            $soldeModel->updateSolde($dest['id'], $soldeDest['montant'] + $montant);
-        } else {
-            $soldeModel->createSolde($dest['id'], $montant);
-        }
-
-        $transactionModel = new TransactionModel();
-        $transactionModel->insertTransaction([
-            'user_id' => $userId,
-            'type_operation_id' => $typeOp['id'],
-            'montant' => $montant,
-            'frais' => $frais
-        ]);
-
-        return redirect()->to('/voirSolde');
-    }
 
     public function voirHistorique() {
         if (!session()->get('user_id')) {
