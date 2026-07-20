@@ -23,7 +23,7 @@
 - `OK_4071` Table `users`
 - `OK_4071` Tale `types_operations`
 - `OK_4071` Table `bareme_frais`
-- `OK_4071` Table `slode`
+- `OK_4071` Table `solde`
 - `OK_4071` Table `transactions`
 
 ## 5. Création des modèles
