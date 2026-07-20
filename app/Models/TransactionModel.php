@@ -43,7 +43,27 @@ class TransactionModel extends Model
                      ->orderBy('transactions.date_transaction', 'DESC')
                      ->findAll();
     }
+   public function getGainsInternes()
+{
+    return $this->db->table('transactions')
+        ->select('types_operation.type_operation, SUM(transactions.frais) as total_frais, COUNT(transactions.id) as nb_operations')
+        ->join('types_operation', 'types_operation.id = transactions.type_operation_id')
+        ->where('transactions.frais_externe', null)
+        ->groupBy('types_operation.id')
+        ->get()
+        ->getResultArray();
+}
 
+public function getGainsExternes()
+{
+    return $this->db->table('transactions')
+        ->select('types_operation.type_operation, SUM(transactions.frais) as total_frais, SUM(transactions.frais_externe) as total_commission_externe, COUNT(transactions.id) as nb_operations')
+        ->join('types_operation', 'types_operation.id = transactions.type_operation_id')
+        ->where('transactions.frais_externe IS NOT NULL')
+        ->groupBy('types_operation.id')
+        ->get()
+        ->getResultArray();
+}   
     public function insertTransaction($data) {
         return $this->insert($data);
     }
