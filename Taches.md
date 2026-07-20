@@ -27,14 +27,21 @@
 - `OK_4071` Table `transactions`
 
 ## 5. Création des modèles
-- PrefixModel
-- TypeOperationsModel
-- ClientModel
-- BaremeFraisModel
+- `OK_4071` PrefixModel
+- `OK_4244` TypeOperationsModel
+- `OK_4244` BaremeFraisModel
+- `OK_4244` ClientModel
 - CompteModel
 - TransactionModel
 
-## 6. Développement de l'espace opérateur
+## 6. Création des controllers
+- `OK_4071` PrefixController
+- `OK_4244` OperationAdminController
+- `OK_4244` ClientController
+- CompteController
+- TransactionController
+
+## 7. Développement de l'espace opérateur
 - Gestion des préfixes
   - Ajouter
   - Modifier
