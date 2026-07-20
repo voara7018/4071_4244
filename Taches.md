@@ -22,15 +22,15 @@
 - `OK_4071` Table `prefixes`
 - `OK_4071` Table `clients`
 - `OK_4071` Table `types_operations`
-- `OK_4071` Table `tranches_frais`
+- `OK_4071` Table `bareme_frais`
 - `OK_4071` Table `comptes`
 - `OK_4071` Table `transactions`
 
-## 5. Création des modèles (Models)
+## 5. Création des modèles
 - PrefixModel
+- TypeOperationsModel
 - ClientModel
-- TypeOperationModel
-- TrancheFraisModel
+- BaremeFraisModel
 - CompteModel
 - TransactionModel
 

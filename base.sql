@@ -17,6 +17,11 @@ CREATE TABLE types_operation (
     type_operation TEXT
 );
 
+INSERT INTO types_operation(code, type_operation) VALUES
+('depot', 'DEPOT'),
+('retrait', 'RETRAIT'),
+('transfert', 'TRANSFERT');
+
 CREATE TABLE bareme_frais (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     type_operation_id INTEGER,
