@@ -31,15 +31,14 @@
 - `OK_4244` TypeOperationsModel
 - `OK_4244` BaremeFraisModel
 - `OK_4244` ClientModel
-- CompteModel
+- SoldeModel
 - TransactionModel
 
 ## 6. Création des controllers
 - `OK_4071` PrefixController
 - `OK_4244` OperationAdminController
 - `OK_4244` ClientController
-- CompteController
-- TransactionController
+- `OK_4244` ClientsController
 
 ## 7. Développement de l'espace opérateur
 - Gestion des préfixes
@@ -59,14 +58,13 @@
 - Consultation de la situation des comptes clients
 
 ## 7. Développement de l'espace client
-- Connexion avec le numéro de téléphone
-- Vérification du préfixe
-- Création automatique du compte si inexistant
-- Consultation du solde
-- Dépôt
-- Retrait
-- Transfert
-- Historique des transactions
+- `OK_4244` Connexion avec le numéro de téléphone
+- `OK_4244` Création automatique du compte si inexistant
+- `OK_4244` Consultation du solde
+- `OK_4244` Dépôt
+- `OK_4244` Retrait
+- `OK_4244` Transfert
+- `OK_4244` Historique des transactions
 
 ## 8. Validation des opérations
 - Vérification du solde avant retrait

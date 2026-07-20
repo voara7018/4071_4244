@@ -43,7 +43,6 @@ INSERT INTO users(numero_telephone) VALUES
 ('0340340340'),
 ('0381183803');
 
-
 CREATE TABLE solde (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,

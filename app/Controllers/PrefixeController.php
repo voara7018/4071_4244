@@ -9,7 +9,7 @@ class PrefixeController extends BaseController
 {
     public function index(): string
     {
-        return view('admin/prefixes');
+        return view('prefixes');
     }
     public function insert(){
         $prefixesModel = new PrefixesModel();
