@@ -79,13 +79,13 @@
 - `OK_4244` Modifier la table `transactions` en rajoutant la colonne `frais_externe` et `operateur_destinataire_id`
 
 ## 2. Création et Modification des Modèles
-- OperateurModel
-- CommissionExterneModel
-- Modifier `PrefixesModel.php` pour inclure la jointure vers la table `operateurs`
-- Modifier `TransactionModel.php` pour autoriser les nouveaux champs et Ajouter les requêtes de statistiques (gains internes/externes, dettes opérateurs)
+- `OK_4071` OperateurModel
+- `OK_4071` CommissionExterneModel
+- `OK_4071` Modifier `PrefixesModel.php` pour inclure la jointure vers la table `operateurs`
+- `OK_4071` Modifier `TransactionModel.php` pour autoriser les nouveaux champs et Ajouter les requêtes de statistiques (gains internes/externes, dettes opérateurs)
 
 ## 3. Développement Côté Opérateur
-- Modifier `PrefixeController.php` et la vue `prefixes.php` : Ajouter un champ pour choisir ou définir l'opérateur associé au préfixe
+- `OK_4244` Modifier `PrefixeController.php` et la vue `prefixes.php` : Ajouter un champ pour choisir ou définir l'opérateur associé au préfixe
 - Ajouter `CommissionController.php` et la vue `commission.php` : Interface de configuration du pourcentage de commission externe
 - Modifier `app/Config/Routes.php` et `app/Views/layouts/sidebar.php` : Ajouter les routes et les liens pour la nouvelle page de commission
 - Modifier `TransactionController.php` et la vue `situation.php` :
@@ -93,7 +93,7 @@
   - Ajouter un tableau affichant les montants à envoyer (dettes) à chaque opérateur externe
 
 ## 4. Développement Côté Client
-- Modifier la vue `faireTransfert.php` :
+- Modifier `faireTransfert.php` :
   - Modifier le champ de saisie du destinataire pour accepter plusieurs numéros séparés par des virgules
   - Ajouter une case à cocher "Option inclure les frais de retrait lors de l'envoi"
 - Modifier `ClientsController.php` (méthode `traiterTransfert`) :

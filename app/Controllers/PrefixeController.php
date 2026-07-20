@@ -13,8 +13,8 @@ class PrefixeController extends BaseController
         $prefixesModel = new PrefixesModel();
         $data['prefixes'] = $prefixesModel->findAll();
         $operateursModel = new OperateurModel();
-        $operateurs['operateurs'] = $operateursModel->findAll();
-        return view('prefixes', $data, $operateurs);
+        $data['operateurs'] = $operateursModel->findAll();
+        return view('prefixes', $data);
     }
     public function insert(){
         $prefixesModel = new PrefixesModel();

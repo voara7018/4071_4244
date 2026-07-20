@@ -12,9 +12,4 @@ class OperateurModel extends Model {
         'is_local'
 
     ];
-
-    public function getOperateurs() {
-        return $this->findAll();
-    }
-
 }
