@@ -18,7 +18,7 @@ $routes->post('/prefixes/insert', 'PrefixeController::insert');
 $routes->get('/situation_financiere', 'TransactionController::gains');
 $routes->get('/comptabilite', 'TransactionController::comptes');
 $routes->get('/commission', 'CommissionController::index');
-$routes->get('/commission/insert', 'CommissionController::insert');
+$routes->post('/commission/insert', 'CommissionController::insert');
 
 
 
