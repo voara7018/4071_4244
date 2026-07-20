@@ -2,21 +2,27 @@
 
 namespace App\Controllers;
 use App\Models\PrefixesModel;
+use App\Models\OperateurModel;
 use Exception;
 
 
 class PrefixeController extends BaseController
 {
-    public function index(): string
+    public function index()
     {
         $prefixesModel = new PrefixesModel();
         $data['prefixes'] = $prefixesModel->findAll();
-        return view('prefixes', $data);
+        $operateursModel = new OperateurModel();
+        $operateurs['operateurs'] = $operateursModel->findAll();
+        return view('prefixes', $data, $operateurs);
     }
     public function insert(){
         $prefixesModel = new PrefixesModel();
         $prefixes = $this->request->getPost('prefixes');
+        $operateursModel = new OperateurModel();
+        $operateurs['operateurs'] = $operateursModel->findAll();
         $data = [
+            'operateur_id' => $operateursModel->getOperatorId(),
             'prefixes' => $prefixes,
             'statut' => 1
         ];

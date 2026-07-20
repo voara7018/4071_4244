@@ -7,6 +7,10 @@ class PrefixesModel extends Model
     {
         protected $table = 'prefixes';
         protected $primaryKey = 'id';
-        protected $allowedFields = ['prefixes', 'statut'];
+        protected $allowedFields = [
+            'operateur_id', 
+            'prefixes', 
+            'statut'
+        ];
     }
 ?>

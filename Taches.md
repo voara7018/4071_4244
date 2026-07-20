@@ -73,10 +73,10 @@
 ### Version 2
 
 ## 1. Modifications de la Base de Données
-- Ajouter la table `operateurs` (id, nom, is_local)
-- Ajouter la table `commissions_externes` (id, pourcentage)
-- Modifier la table `prefixes` : Ajouter la colonne `operateur_id` (clé étrangère)
-- Modifier la table `transactions` : Ajouter la colonne `frais_externe` et `operateur_destinataire_id`
+- `OK_4244` Ajouter la table `operateurs` (id, nom, is_local)
+- `OK_4244` Ajouter la table `commissions_externes` (id, pourcentage)
+- `OK_4244` Modifier la table `prefixes` en rajoutant la colonne `operateur_id` (clé étrangère)
+- `OK_4244` Modifier la table `transactions` en rajoutant la colonne `frais_externe` et `operateur_destinataire_id`
 
 ## 2. Création et Modification des Modèles
 - OperateurModel
