@@ -8,6 +8,7 @@ use App\Models\TransactionModel;
 use App\Models\BaremeFraisModel;
 use App\Models\TypeOperationsModel;
 use App\Models\CommissionsExterneModel;
+use App\Models\PromotionModel;
 use App\Models\PrefixesModel;
 use App\Models\OperateurModel;
 
@@ -46,12 +47,18 @@ class TransfertController extends BaseController {
         $prefixesModel = new PrefixesModel();
         $operateurModel = new OperateurModel();
         $commissionsExterneModel = new CommissionsExterneModel();
+        $PromotionModel = new PromotionModel();
 
         $typeOpTransfert = $typeOpModel->where('code', 'transfert')->first();
         $typeOpRetrait = $typeOpModel->where('code', 'retrait')->first();
         
         $commissionExterneInfo = $commissionsExterneModel->first();
         $pourcentageExterne = $commissionExterneInfo ? $commissionExterneInfo['pourcentage'] : 0;
+
+        $PromotionInfo = $PromotionModel->first();
+        $pourcentagePromotion = $PromotionInfo ? $PromotionInfo['pourcentage'] : 0;
+
+
 
         $allPrefixes = $prefixesModel->findAll();
         $allOperateurs = $operateurModel->findAll();
@@ -83,6 +90,7 @@ class TransfertController extends BaseController {
                 $pourcentageExterne, 
                 $typeOpTransfert['id'], 
                 $typeOpRetrait['id'], 
+                $pourcentagePromotion,
                 $baremeFraisModel
             );
 
@@ -140,7 +148,7 @@ class TransfertController extends BaseController {
         return ['id' => $operateurId, 'isLocal' => $isLocal];
     }
 
-    private function calculerCoutsDestinataire($montantParDestinataire, $isSenderLocal, $isReceiverLocal, $inclureFrais, $pourcentageExterne, $typeOpTransfertId, $typeOpRetraitId, $baremeFraisModel) {
+    private function calculerCoutsDestinataire($montantParDestinataire, $isSenderLocal, $isReceiverLocal, $inclureFrais, $pourcentageExterne, $typeOpTransfertId, $typeOpRetraitId,$pourcentagePromotion, $baremeFraisModel) {
         $fraisRetrait = 0;
         $fraisExterne = 0;
         $montantAEnvoyer = $montantParDestinataire;
@@ -150,16 +158,19 @@ class TransfertController extends BaseController {
             $montantAEnvoyer += $fraisRetrait;
         }
 
-        // Si l'expéditeur est local et le destinataire externe (Dette)
         if ($isSenderLocal && !$isReceiverLocal) {
             $fraisExterne = ($montantParDestinataire * $pourcentageExterne) / 100;
         }
-        // Si l'expéditeur est externe et le destinataire local (Gain)
         else if (!$isSenderLocal && $isReceiverLocal) {
             $fraisExterne = ($montantParDestinataire * $pourcentageExterne) / 100;
         }
-
-        $fraisTransfert = $this->trouverFraisDansBareme($montantAEnvoyer, $typeOpTransfertId, $baremeFraisModel);
+        if ($isReceiverLocal) {
+            $fraisTransfert = $this->trouverFraisDansBareme($montantAEnvoyer, $typeOpTransfertId, $baremeFraisModel);
+            $fraisPromotion = ($fraisTransfert * $pourcentagePromotion) / 100;
+            $fraisTransfert = $fraisTransfert - $fraisPromotion;
+        } else {
+            $fraisTransfert = $this->trouverFraisDansBareme($montantAEnvoyer, $typeOpTransfertId, $baremeFraisModel);
+        }
 
         return [
             'montantAEnvoyer' => $montantAEnvoyer,

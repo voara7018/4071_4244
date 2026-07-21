@@ -49,6 +49,12 @@
                 <span>Commission</span>
             </a>
         </div>
+         <div class="nav-item">
+            <a href="<?= base_url('/promotion') ?>" class="nav-link <?= str_contains($currentUrl, 'operation') ? 'active' : '' ?>">
+                <i class="bi bi-gear"></i>
+                <span>Promotion</span>
+            </a>
+        </div>
 
         <?php else: ?>
         <div class="nav-section-title">Mon compte</div>
