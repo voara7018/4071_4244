@@ -1,0 +1,164 @@
+DEBUG - 2026-07-21 08:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:12:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 08:12:28 --> TypeError: view(): Argument #2 ($data) must be of type array, int given, called in /home/finaritra/Documents/S4-design/4071_4244/app/Controllers/EpargneController.php on line 15
+[Method: GET, Route: epargne]
+in SYSTEMPATH/Common.php on line 1238.
+ 1 APPPATH/Controllers/EpargneController.php(15): view()
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\EpargneController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+DEBUG - 2026-07-21 08:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 08:14:48 --> ErrorException: Undefined variable $id_clients
+[Method: GET, Route: epargne]
+in APPPATH/Views/insererEpargne.php on line 34.
+ 1 APPPATH/Views/insererEpargne.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/finaritra/Documents/S4-design/4071_4244/app/Views/insererEpargne.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/EpargneController.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\EpargneController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+DEBUG - 2026-07-21 08:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 08:14:49 --> ErrorException: Undefined variable $id_clients
+[Method: GET, Route: epargne]
+in APPPATH/Views/insererEpargne.php on line 34.
+ 1 APPPATH/Views/insererEpargne.php(34): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/finaritra/Documents/S4-design/4071_4244/app/Views/insererEpargne.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/EpargneController.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\EpargneController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+DEBUG - 2026-07-21 08:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:34:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-07-21 08:35:17 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: faireTransfert]
+in APPPATH/Controllers/TransfertController.php on line 205.
+ 1 APPPATH/Controllers/TransfertController.php(205): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Controllers/TransfertController.php(114): App\Controllers\TransfertController->executerTransactions()
+ 3 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\TransfertController->traiterTransfert()
+ 4 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 9 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+DEBUG - 2026-07-21 08:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-07-21 08:38:11 --> no such column: user_id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(1074): CodeIgniter\Model->doUpdate()
+ 7 SYSTEMPATH/Model.php(709): CodeIgniter\BaseModel->update()
+ 8 APPPATH/Models/EpargneModel.php(22): CodeIgniter\Model->update()
+ 9 APPPATH/Controllers/TransfertController.php(208): App\Models\EpargneModel->updateEpargne()
+10 APPPATH/Controllers/TransfertController.php(114): App\Controllers\TransfertController->executerTransactions()
+11 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\TransfertController->traiterTransfert()
+12 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+13 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+14 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+16 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+17 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+CRITICAL - 2026-07-21 08:38:11 --> CodeIgniter\Database\Exceptions\DatabaseException: no such column: user_id
+[Method: POST, Route: faireTransfert]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH/BaseModel.php(1074): CodeIgniter\Model->doUpdate()
+ 4 SYSTEMPATH/Model.php(709): CodeIgniter\BaseModel->update()
+ 5 APPPATH/Models/EpargneModel.php(22): CodeIgniter\Model->update()
+ 6 APPPATH/Controllers/TransfertController.php(208): App\Models\EpargneModel->updateEpargne()
+ 7 APPPATH/Controllers/TransfertController.php(114): App\Controllers\TransfertController->executerTransactions()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\TransfertController->traiterTransfert()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+CRITICAL - 2026-07-21 08:38:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: no such column: user_id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH/BaseModel.php(1074): CodeIgniter\Model->doUpdate()
+ 6 SYSTEMPATH/Model.php(709): CodeIgniter\BaseModel->update()
+ 7 APPPATH/Models/EpargneModel.php(22): CodeIgniter\Model->update()
+ 8 APPPATH/Controllers/TransfertController.php(208): App\Models\EpargneModel->updateEpargne()
+ 9 APPPATH/Controllers/TransfertController.php(114): App\Controllers\TransfertController->executerTransactions()
+10 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\TransfertController->traiterTransfert()
+11 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+12 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+13 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+15 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+16 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+CRITICAL - 2026-07-21 08:38:11 --> [Caused by] Exception: no such column: user_id
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec()
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(406): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(1074): CodeIgniter\Model->doUpdate()
+ 7 SYSTEMPATH/Model.php(709): CodeIgniter\BaseModel->update()
+ 8 APPPATH/Models/EpargneModel.php(22): CodeIgniter\Model->update()
+ 9 APPPATH/Controllers/TransfertController.php(208): App\Models\EpargneModel->updateEpargne()
+10 APPPATH/Controllers/TransfertController.php(114): App\Controllers\TransfertController->executerTransactions()
+11 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\TransfertController->traiterTransfert()
+12 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+13 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+14 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+16 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+17 SYSTEMPATH/rewrite.php(44): require_once('/home/finaritra/Documents/S4-design/4071_4244/public/index.php')
+DEBUG - 2026-07-21 08:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-07-21 08:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

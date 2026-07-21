@@ -11,6 +11,7 @@ use App\Models\CommissionsExterneModel;
 use App\Models\PromotionModel;
 use App\Models\PrefixesModel;
 use App\Models\OperateurModel;
+use App\Models\EpargneModel;
 
 class TransfertController extends BaseController {
     
@@ -172,6 +173,7 @@ class TransfertController extends BaseController {
             $fraisTransfert = $this->trouverFraisDansBareme($montantAEnvoyer, $typeOpTransfertId, $baremeFraisModel);
         }
 
+
         return [
             'montantAEnvoyer' => $montantAEnvoyer,
             'fraisTransfert' => $fraisTransfert,
@@ -196,8 +198,14 @@ class TransfertController extends BaseController {
 
         foreach ($operationsPretes as $op) {
             $soldeDest = $soldeModel->getSoldeByUserId($op['dest_id']);
+
             if ($soldeDest) {
-                $soldeModel->updateSolde($op['dest_id'], $soldeDest['montant'] + $op['montantAEnvoyer']);
+                $epargneModel = new EpargneModel();
+                $pourcentageEpargne = $epargneModel->getEpargneByClients($op['dest_id']);
+                $montantEnvoyer = $op['montantAEnvoyer'] * $pourcentageEpargne / 100;
+
+                $soldeModel->updateSolde($op['dest_id'], $soldeDest['montant'] + ($op['montantAEnvoyer'] - $montantEnvoyer));
+                $epargneModel->updateEpargne($op['dest_id'], $montantEnvoyer);
             } else {
                 $soldeModel->createSolde($op['dest_id'], $op['montantAEnvoyer']);
             }

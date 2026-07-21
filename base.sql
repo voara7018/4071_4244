@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS solde;
 DROP TABLE IF EXISTS transactions;  
 DROP TABLE IF EXISTS operateurs;
 DROP TABLE IF EXISTS commissions_externes;
+DROP TABLE IF EXISTS epargne;
 
 
 CREATE TABLE operateurs (
@@ -35,6 +36,16 @@ INSERT INTO commissions_externes(pourcentage) VALUES
 
 INSERT INTO promotion(pourcentage) VALUES
 (5);
+
+CREATE TABLE epargne (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_clients INTEGER,
+    pourcentage INTEGER,
+    montant INTEGER,
+    FOREIGN KEY (id_clients) REFERENCES users(id)
+
+);
+
 
 
 CREATE TABLE prefixes (

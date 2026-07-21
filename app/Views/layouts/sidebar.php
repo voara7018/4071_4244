@@ -71,6 +71,12 @@
             </a>
         </div>
 
+        <div class="nav-item">
+            <a href="<?= base_url('epargne') ?>" class="nav-link <?= str_contains($currentUrl, 'epargne') ? 'active' : '' ?>">
+                <span>Epargne</span>
+            </a>
+        </div>
+
         <div class="nav-section-title">Opérations</div>
         <div class="nav-item">
             <a href="<?= base_url('faireDepot') ?>" class="nav-link <?= str_contains($currentUrl, 'faireDepot') ? 'active' : '' ?>">

@@ -8,7 +8,7 @@
 </div>
 
 <div class="page-header animate-slideUp">
-    <h1>Gestion des promotion</h1>
+    <h1>Gestion des Epargnes</h1>
     <p class="page-subtitle">Ajoutez pourcentages</p>
 </div>
 
@@ -29,13 +29,14 @@
                 </div>
             <?php endif; ?>
 
-            <form action="<?= base_url('promotion/insert') ?>" method="post">
+            <form action="<?= base_url('epargne/insert') ?>" method="post">
                                 <div class="form-group-custom">
-                    <label for="prefixes">Promotion (%)</label>
+                    <input type="hidden" id="prefixes" name="id_clients" class="form-input" value="<?= $users ?>" required>
+                    <label for="prefixes">Epargne (%)</label>
                     <div class="input-group-custom">
                         <span class="input-prepend"><i class="bi bi-percent"></i></span>
-                       <input type="number" id="prefixes" name="promotion" class="form-input" 
-       placeholder="Entrez la promotion" step="0.01" min="0" max="100" required>
+                       <input type="number" id="prefixes" name="epargne" class="form-input" 
+       placeholder="Entrez l'épargne" step="0.01" min="0" max="100" required>
                 </div>
                 </div>
 

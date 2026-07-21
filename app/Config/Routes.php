@@ -38,3 +38,6 @@ $routes->get('/faireTransfert', 'TransfertController::faireTransfert');
 $routes->post('/faireTransfert', 'TransfertController::traiterTransfert');
 $routes->get('/voirHistorique', 'ClientsController::voirHistorique');
 $routes->get('/deconnexion', 'ClientsController::deconnexion');
+$routes->get('/epargne', 'EpargneController::index');
+$routes->post('/epargne/insert', 'EpargneController::insert');
+
