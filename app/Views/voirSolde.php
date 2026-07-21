@@ -8,7 +8,7 @@
 </div>
 
 <div class="page-header animate-slideUp">
-    <h1>Mon solde</h1>
+    <h1>Mon solde </h1>
     <p class="page-subtitle">Consultez votre solde actuel</p>
 </div>
 
