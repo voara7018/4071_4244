@@ -32,7 +32,7 @@
             <form action="<?= base_url('epargne/insert') ?>" method="post">
                                 <div class="form-group-custom">
                     <input type="hidden" id="prefixes" name="id_clients" class="form-input" value="<?= $users ?>" required>
-                    <label for="prefixes">Epargne (%)</label>
+                    <label for="prefixes">Epargne  (%)</label>
                     <div class="input-group-custom">
                         <span class="input-prepend"><i class="bi bi-percent"></i></span>
                        <input type="number" id="prefixes" name="epargne" class="form-input" 
