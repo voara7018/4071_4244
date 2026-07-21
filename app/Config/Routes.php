@@ -19,6 +19,8 @@ $routes->get('/situation_financiere', 'TransactionController::gains');
 $routes->get('/comptabilite', 'TransactionController::comptes');
 $routes->get('/commission', 'CommissionController::index');
 $routes->post('/commission/insert', 'CommissionController::insert');
+$routes->get('/promotion', 'PromotionController::index');
+$routes->post('/promotion/insert', 'PromotionController::insert');
 
 
 
